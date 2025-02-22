@@ -1,8 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Page"; // Sets the title for the page
 }
 
-<div class="text-center">
-    <h1 class="display-4">The Joel Hilton Film Collection</h1>
-	<img src="~/lib/mission06assignment_picture.jpg" />
+<div class="container text-center mt-5">
+    <!-- Bootstrap container to center content -->
+    <h1 class="display-3 fw-bold">The Joel Hilton Film Collection</h1> <!-- Styled heading for better visibility -->
+
+    <div class="mt-4">
+        <!-- Image with Bootstrap responsive styling and shadow -->
+        <img src="~/lib/mission06assignment_picture.jpg" class="img-fluid rounded shadow-lg" alt="Joel Hilton Film Collection">
+    </div>
 </div>

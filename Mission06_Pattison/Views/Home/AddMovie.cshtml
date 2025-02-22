@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Movies Collection";
+}
+
+@model Mission06_Pattison.Models.Movie
+@using Mission06_Pattison.Models
+
+<div class="container mt-4">
+    <h1 class="text-center fw-bold mb-4">Enter A Movie</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post" class="card p-4 shadow-sm bg-light">
+                <input type="hidden" asp-for="MovieId" />
+
+                <!-- Category Dropdown -->
+                <div class="mb-3">
+                    <label asp-for="CategoryId" class="form-label fw-bold">Category:</label>
+                    <select asp-for="CategoryId" class="form-select">
+                        <option value="">Select a Category</option>
+                        @if (ViewBag.Categories != null)
+                        {
+                            @foreach (var category in ViewBag.Categories)
+                            {
+                                <option value="@category.CategoryId">@category.CategoryName</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <!-- Movie Title -->
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label fw-bold">Title:</label>
+                    <input asp-for="Title" class="form-control" />
+                </div>
+
+                <!-- Director -->
+                <div class="mb-3">
+                    <label asp-for="Director" class="form-label fw-bold">Director:</label>
+                    <input asp-for="Director" class="form-control" />
+                </div>
+
+                <!-- Rating Dropdown -->
+                <div class="mb-3">
+                    <label asp-for="Rating" class="form-label fw-bold">Rating:</label>
+                    <select asp-for="Rating" class="form-select">
+                        <option value="G">G</option>
+                        <option value="PG">PG</option>
+                        <option value="PG-13">PG-13</option>
+                        <option value="R">R</option>
+                    </select>
+                </div>
+
+                <!-- Year Input with Validation -->
+                <div class="mb-3">
+                    <label asp-for="Year" class="form-label fw-bold">Year:</label>
+                    <input asp-for="Year" class="form-control" />
+                    <span asp-validation-for="Year" class="text-danger"></span>
+                </div>
+
+                <!-- Edited Dropdown -->
+                <div class="mb-3">
+                    <label asp-for="Edited" class="form-label fw-bold">Edited:</label>
+                    <select asp-for="Edited" class="form-select">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                    </select>
+                </div>
+
+                <!-- Lent To -->
+                <div class="mb-3">
+                    <label asp-for="LentTo" class="form-label fw-bold">Lent To:</label>
+                    <input asp-for="LentTo" value="" class="form-control" />
+                </div>
+
+                <!-- Copied to Plex Dropdown -->
+                <div class="mb-3">
+                    <label asp-for="CopiedToPlex" class="form-label fw-bold">Copied To Plex:</label>
+                    <select asp-for="CopiedToPlex" class="form-select">
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                    </select>
+                </div>
+
+                <!-- Notes -->
+                <div class="mb-3">
+                    <label asp-for="Notes" class="form-label fw-bold">Notes (Max 25 chars):</label>
+                    <input asp-for="Notes" maxlength="25" class="form-control" />
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit Movie</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

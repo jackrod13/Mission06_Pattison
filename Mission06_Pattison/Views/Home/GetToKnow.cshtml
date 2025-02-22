@@ -1,15 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "GetToKnow";
+    ViewData["Title"] = "Get To Know Joel";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Get to Know Joel</h1>
-    <br />
-    <a href="https://www.qwcomedy.com/" target="_blank"" style="font-size: 20px;">Wits Comedy</a>
-    <br />
-    <a href="https://baconsale.com/" target="_blank" style="font-size: 20px;">Baconsale</a>
-    <br />
-    <br />
-    <a href="https://baconsale.com/" target="_blank">
-        <img src="~/lib/mission06assignment_baconpicture.jpg" alt="Bacon Image" height="300" width="400">
+<div class="container text-center mt-5">
+    <h1 class="display-4 fw-bold">Get to Know Joel</h1>
+
+    <div class="mt-4">
+        <!-- Comedy & Podcast Links -->
+        <a href="https://www.qwcomedy.com/" target="_blank" class="btn btn-primary btn-lg m-2">
+            Wits Comedy
+        </a>
+        <a href="https://baconsale.com/" target="_blank" class="btn btn-danger btn-lg m-2">
+            Baconsale
+        </a>
+    </div>
+
+    <div class="mt-4">
+        <!-- Image with Responsive Bootstrap Styling -->
+        <a href="https://baconsale.com/" target="_blank">
+            <img src="~/lib/mission06assignment_baconpicture.jpg"
+                 alt="Bacon Image"
+                 class="img-fluid rounded shadow-lg"
+                 style="max-width: 100%; height: auto; width: 400px;">
+        </a>
+    </div>
 </div>
